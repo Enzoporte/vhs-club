@@ -3,42 +3,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuVHSSystem : MonoBehaviour
 {
-    public GameObject optionsMenu;
-    public GameObject mainMenu;
+    [SerializeField] private GameObject activeUI;
+    [SerializeField] private GameObject menuUI;
 
-    public AudioSource audioSource;
+    [SerializeField] AudioClip clickSFX;
+    [Range(0f, 1f)]
+    [SerializeField] float clickVolume = 0.5f;
 
-    public AudioClip moneda;
 
-    public void PlayClickSound()
+    public void ToggleMenuUI()
     {
-        audioSource.PlayOneShot(moneda);
+        SoundFXManager.Instance.PlaySoundFXClip(clickSFX, transform, clickVolume);
+        menuUI?.SetActive(!menuUI.activeSelf);
+        activeUI?.SetActive(!activeUI.activeSelf);
     }
 
-    public void OpenOptionsPanel()
-    {
-        PlayClickSound();
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(true);
-    }
-
-    public void OpenMainMenuPanel()
-    {
-        PlayClickSound();
-        mainMenu.SetActive(true);
-        optionsMenu.SetActive(false);
-    }
-
-    public void QuitGame()
-    {
-        PlayClickSound();
-        Debug.Log("Saliendo del juego");
-        Application.Quit();
-    }
-
-    public void PlayGame()
-    {
-        PlayClickSound();
-        SceneManager.LoadScene("1raEscena");
-    }
 }
