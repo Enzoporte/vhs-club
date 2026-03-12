@@ -10,19 +10,17 @@ public class PauseMenuSystem : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] float clickVolume = 0.5f;
 
+    /* 
+    Reemplazar por input system en alguna otra parte, para que cuando
+    se aprete esc, saque cualquier ui que haya activo
+    */
     void Update()
-    {
-        PauseMenuByKey();
-    }
-
-    public void PauseMenuByKey()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-            pauseButton.SetActive(false);
+            PauseGame();
         }
+
     }
 
     public void PlayClickSound()
@@ -42,13 +40,6 @@ public class PauseMenuSystem : MonoBehaviour
         PlayClickSound();
         pauseMenu.SetActive(false);
         optionsPanel.SetActive(true);
-    }
-
-    public void BackToMenu()
-    {
-        PlayClickSound();
-        pauseMenu.SetActive(true);
-        optionsPanel.SetActive(false);
     }
 
     public void ResumeGame()

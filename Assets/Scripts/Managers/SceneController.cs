@@ -27,10 +27,6 @@ public class SceneController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     }
 
     private static void SetupInstance()
@@ -39,40 +35,23 @@ public class SceneController : MonoBehaviour
         if (instance == null)
         {
             GameObject gameObj = new GameObject();
-<<<<<<< Updated upstream
             gameObj.name = "SceneController";
-=======
-            gameObj.name = "ShelfManager";
->>>>>>> Stashed changes
             instance = gameObj.AddComponent<SceneController>();
             DontDestroyOnLoad(gameObj);
         }
     }
-<<<<<<< Updated upstream
     
     public void LoadGameplayScene()
-=======
-
-    public void LoadGameScene()
->>>>>>> Stashed changes
     {
         SceneManager.LoadScene(1);
     }
 
-<<<<<<< Updated upstream
-    public void LoadMainMenu()
-=======
     public void LoadMenuScene()
->>>>>>> Stashed changes
     {
         SceneManager.LoadScene(0);
     }
 
-<<<<<<< Updated upstream
-    public void Quit()
-=======
     public void QuitGame()
->>>>>>> Stashed changes
     {
         Application.Quit();
     }

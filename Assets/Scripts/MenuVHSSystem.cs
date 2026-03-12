@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class MenuVHSSystem : MonoBehaviour
 {
     [SerializeField] private GameObject activeUI;
-    [SerializeField] private GameObject menuUI;
 
     [SerializeField] AudioClip clickSFX;
     [Range(0f, 1f)]
@@ -14,7 +13,7 @@ public class MenuVHSSystem : MonoBehaviour
     public void ToggleMenuUI()
     {
         SoundFXManager.Instance.PlaySoundFXClip(clickSFX, transform, clickVolume);
-        menuUI?.SetActive(!menuUI.activeSelf);
+        gameObject.SetActive(!gameObject.activeSelf);
         activeUI?.SetActive(!activeUI.activeSelf);
     }
 

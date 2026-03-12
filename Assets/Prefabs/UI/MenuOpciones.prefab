@@ -354,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea2137cd9bb7aa4bb49b4d3f2781e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 3197785881301817905}
-  mainMenu: {fileID: 0}
+  activeUI: {fileID: 0}
+  menuUI: {fileID: 3197785881301817905}
   clickSFX: {fileID: 8300000, guid: 5add45245dceeab40a67b2fb8edb9b87, type: 3}
   clickVolume: 0.511
 --- !u!1 &3297628231056983241

@@ -188,8 +188,8 @@ Canvas:
   m_GameObject: {fileID: 149131478}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -235,8 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea2137cd9bb7aa4bb49b4d3f2781e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 431115708}
-  mainMenu: {fileID: 655223772}
+  activeUI: {fileID: 0}
   clickSFX: {fileID: 0}
   clickVolume: 0
 --- !u!1 &213241812
@@ -324,7 +323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7003541309855405939}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadGameScene
+        m_MethodName: LoadGameplayScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -505,11 +504,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257022072}
   m_CullTransparentMesh: 1
---- !u!1 &431115708 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3197785881301817905, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
-  m_PrefabInstance: {fileID: 2655205086660414647}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &431115709 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7999010977858034361, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
@@ -663,7 +657,6 @@ GameObject:
   - component: {fileID: 655223773}
   - component: {fileID: 655223775}
   - component: {fileID: 655223774}
-  - component: {fileID: 655223776}
   m_Layer: 5
   m_Name: "Men\xFA"
   m_TagString: Untagged
@@ -731,22 +724,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655223772}
   m_CullTransparentMesh: 1
---- !u!114 &655223776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655223772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea2137cd9bb7aa4bb49b4d3f2781e7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 431115708}
-  mainMenu: {fileID: 655223772}
-  clickSFX: {fileID: 8300000, guid: 5add45245dceeab40a67b2fb8edb9b87, type: 3}
-  clickVolume: 0
 --- !u!1 &686816945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1165,22 @@ Transform:
   - {fileID: 7003541309855405938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1081645721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3197785881301817905, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+  m_PrefabInstance: {fileID: 2655205086660414647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1081645722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6988978971525554291, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+  m_PrefabInstance: {fileID: 2655205086660414647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081645721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2137cd9bb7aa4bb49b4d3f2781e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1945318297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1333,7 +1326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 655223776}
+      - m_Target: {fileID: 1081645722}
         m_TargetAssemblyTypeName: MenuVHSSystem, Assembly-CSharp
         m_MethodName: ToggleMenuUI
         m_Mode: 1
@@ -1470,14 +1463,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 149131482}
     m_Modifications:
+    - target: {fileID: 411931001977894670, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991728518760504969, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3197785881301817905, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
       propertyPath: m_Name
       value: MenuOpciones
       objectReference: {fileID: 0}
+    - target: {fileID: 3197785881301817905, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704655073529767331, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988978971525554291, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: menuUI
+      value: 
+      objectReference: {fileID: 1081645721}
+    - target: {fileID: 6988978971525554291, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: activeUI
+      value: 
+      objectReference: {fileID: 655223772}
     - target: {fileID: 6988978971525554291, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
       propertyPath: mainMenu
       value: 
       objectReference: {fileID: 655223772}
+    - target: {fileID: 7518252927966850552, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7999010977858034361, guid: d22fc100ef73b0748bd24a3dc3873fdd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1627,13 +1648,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7003541309855405939 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5023380910129953085, guid: 994e939d0dc56db4895faed91d68a41e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4595546442196739602, guid: 994e939d0dc56db4895faed91d68a41e, type: 3}
   m_PrefabInstance: {fileID: 7003541309855405937}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1f63f48433e0f46a40fea1cca752f1, type: 3}
+  m_Script: {fileID: 11500000, guid: b21229ce1447015428b46f43fb69366d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
