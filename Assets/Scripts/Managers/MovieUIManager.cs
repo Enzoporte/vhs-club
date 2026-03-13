@@ -16,7 +16,6 @@ public class MovieUIManager : MonoBehaviour
     [SerializeField] private float openMovieVolume;
 
 
-
     private static MovieUIManager instance;
     public static MovieUIManager Instance
     {
